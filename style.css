@@ -1,0 +1,81 @@
+body {
+    background-color: cornflowerblue;
+}
+
+.option-btn {}
+
+.choice {
+    width: 30%;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#result {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-style: italic;
+}
+
+#reset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+#container-1 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.choice-val{
+   display: flex;
+   justify-content: center;
+}
+
+
+#rounds {
+    text-align: center;
+    height: 25%;
+    font-size: xx-large;
+}
+#round{
+    color: white;
+}
+
+#player-title{
+    display:flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.choice-buttons-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#player-choice{
+    
+}
