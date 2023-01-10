@@ -7,15 +7,13 @@ const resetBtn = document.getElementById("reset")
 const rockIcon = document.createElement("i")
 const paperIcon = document.createElement("i")
 const scissorsIcon = document.createElement("i")
-
+var computerChoice = document.getElementById("computer-choice")
+var computerChoice = ""
 const imgs = {
     "rock": rockIcon,
     "paper": paperIcon,
     "scissors": scissorsIcon
 }
-
-document.body.appendChild(icon)
-
 var computerPoints = 0;
 var playerPoints = 0;
 
@@ -34,11 +32,24 @@ function setIconsContent() {
 }
 
 
+function setComputerChoice() {
+    let c = generateRandomChoice()
+    computerChoice.appendChild(imgs.paper)
+    computerChoice.removeChild(imgs.paper)
+    computerChoice.appendChild(imgs[c])
+}
+
 function initListeners() {
     resetBtn.addEventListener("click", (e) => { })
-    rockBtn.addEventListener("click", (e) => { })
-    paperBtn.addEventListener("click", (e) => { })
-    scissorsBtn.addEventListener("click", (e) => { })
+    rockBtn.addEventListener("click", (e) => {
+        generateRandomChoice()
+    })
+    paperBtn.addEventListener("click", (e) => {
+        generateRandomChoice()
+    })
+    scissorsBtn.addEventListener("click", (e) => {
+        generateRandomChoice()
+    })
 }
 
 function generateRandomChoice() {
@@ -90,6 +101,16 @@ function determineWinner(playerChoice, computerChoice) {
             break
     }
 
+    // switch (result) {
+    //     case 0:
+
+    //         break;
+    //     case 1:
+    //         break;
+    //     case -1:
+    //         break;
+    // }
+
 }
 
 function reset() {
@@ -99,3 +120,4 @@ function reset() {
 
 setIconsContent()
 initListeners()
+setComputerChoice() 
