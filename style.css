@@ -53,6 +53,9 @@ body {
 .choice-val{
    display: flex;
    justify-content: center;
+   font-size: medium;
+   margin-top: 20px;
+   margin-bottom: 20px;
 }
 
 
@@ -77,7 +80,7 @@ body {
 }
 
 .choice-btn{
-   color: grey;
+   color: #ffcc80;
 }
 
 #player-choice{

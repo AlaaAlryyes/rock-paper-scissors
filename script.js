@@ -1,12 +1,18 @@
 const buttons = document.getElementById("options")
 const options = ["rock", "paper", "scissors"]
+const rockBtn = document.getElementById("rock")
+const paperBtn = document.getElementById("paper")
+const scissorsBtn = document.getElementById("scissors")
+const resetBtn = document.getElementById("reset")
+const rockIcon = document.createElement("i")
+const paperIcon = document.createElement("i")
+const scissorsIcon = document.createElement("i")
+
 const imgs = {
-    "rock": "",
-    "paper": "",
-    "scissors": ""
+    "rock": rockIcon,
+    "paper": paperIcon,
+    "scissors": scissorsIcon
 }
-const icon = document.createElement("i")
-icon.className = "fa-solid fa-solid fa-hand-back-fist fa-5x choice-btn"
 
 document.body.appendChild(icon)
 
@@ -19,6 +25,20 @@ function buildOptionsButtons() {
     for (o in options) {
         buttons.appendChild(btn)
     }
+}
+
+function setIconsContent() {
+    rockIcon.className = "fa-solid fa-solid fa-hand-back-fist fa-5x choice-btn"
+    paperIcon.className = "fa-solid fa-hand fa-5x choice-btn"
+    scissorsIcon.className = "fa-solid fa-hand-scissors fa-5x choice-btn"
+}
+
+
+function initListeners() {
+    resetBtn.addEventListener("click", (e) => { })
+    rockBtn.addEventListener("click", (e) => { })
+    paperBtn.addEventListener("click", (e) => { })
+    scissorsBtn.addEventListener("click", (e) => { })
 }
 
 function generateRandomChoice() {
@@ -77,3 +97,5 @@ function reset() {
     playerPoints = 0;
 }
 
+setIconsContent()
+initListeners()
