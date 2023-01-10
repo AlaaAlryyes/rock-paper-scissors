@@ -76,6 +76,10 @@ body {
     justify-content: space-evenly;
 }
 
+.choice-btn{
+   color: grey;
+}
+
 #player-choice{
     
 }

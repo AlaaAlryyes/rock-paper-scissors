@@ -5,6 +5,10 @@ const imgs = {
     "paper": "",
     "scissors": ""
 }
+const icon = document.createElement("i")
+icon.className = "fa-solid fa-solid fa-hand-back-fist fa-5x choice-btn"
+
+document.body.appendChild(icon)
 
 var computerPoints = 0;
 var playerPoints = 0;
