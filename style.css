@@ -68,7 +68,7 @@ body {
     color: white;
 }
 
-#player-title{
+.player-title{
     display:flex;
     justify-content: center;
     font-size: x-large;

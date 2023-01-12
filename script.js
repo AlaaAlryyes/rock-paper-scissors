@@ -4,16 +4,21 @@ const rockBtn = document.getElementById("rock")
 const paperBtn = document.getElementById("paper")
 const scissorsBtn = document.getElementById("scissors")
 const resetBtn = document.getElementById("reset")
+const resultContainer = document.getElementById("result")
+const roundsElem = document.getElementById("round")
 const rockIcon = document.createElement("i")
 const paperIcon = document.createElement("i")
 const scissorsIcon = document.createElement("i")
 var computerChoice = document.getElementById("computer-choice")
-var computerChoice = ""
+var computerChoiceVal = document.getElementById("computer-choice-val")
+var playerChoiceVal = document.getElementById("player-choice-val")
 const imgs = {
     "rock": rockIcon,
     "paper": paperIcon,
     "scissors": scissorsIcon
 }
+
+var rounds = 0
 var computerPoints = 0;
 var playerPoints = 0;
 
@@ -33,31 +38,40 @@ function setIconsContent() {
 
 
 function setComputerChoice() {
-    let c = generateRandomChoice()
-    computerChoice.appendChild(imgs.paper)
-    computerChoice.removeChild(imgs.paper)
-    computerChoice.appendChild(imgs[c])
+    let choice = generateRandomChoice()
+    computerChoice.innerHTML = ""
+    computerChoice.appendChild(imgs[choice])
+    return choice;
 }
 
 function initListeners() {
-    resetBtn.addEventListener("click", (e) => { })
+    resetBtn.addEventListener("click", (e) => { 
+        rounds=0;
+        computerChoice.innerHTML=""
+    })
     rockBtn.addEventListener("click", (e) => {
-        generateRandomChoice()
+        playerChoiceVal.innerText = "Your choice: " + "rock"
+        determineWinner("rock", setComputerChoice())
     })
     paperBtn.addEventListener("click", (e) => {
-        generateRandomChoice()
+        playerChoiceVal.innerText = "Your choice: " + "paper"
+        determineWinner("paper", setComputerChoice())
     })
     scissorsBtn.addEventListener("click", (e) => {
-        generateRandomChoice()
+        playerChoiceVal.innerText = "Your choice: " + "scissors"
+        determineWinner("scissors", setComputerChoice())
     })
 }
 
 function generateRandomChoice() {
-    let c = Math.floor(Math.random() * 4);
+    let c = Math.floor(Math.random() * 3);
+    computerChoiceVal.innerText = "Computer choice :" + options[c];
     return options[c];
 }
 
 function determineWinner(playerChoice, computerChoice) {
+    rounds++
+    roundsElem.innerText = "Rounds: "+rounds
     let result = 0;
     switch (playerChoice) {
         case "rock":
@@ -101,15 +115,20 @@ function determineWinner(playerChoice, computerChoice) {
             break
     }
 
-    // switch (result) {
-    //     case 0:
+    switch (result) {
+        case 0:
+            resultContainer.innerHTML = "Draw!!"
 
-    //         break;
-    //     case 1:
-    //         break;
-    //     case -1:
-    //         break;
-    // }
+            break;
+        case 1:
+            resultContainer.innerHTML = "You Won!!"
+
+            break;
+        case -1:
+            resultContainer.innerHTML = "You lost!!"
+
+            break;
+    }
 
 }
 
